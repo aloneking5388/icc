@@ -1,5 +1,6 @@
 import HeroSection from '@/components/HeroSection';
 import valuesData from '@/lib/ValueData';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
       <h2 className="text-3xl font-bold text-center mb-12">Our Core Values</h2>
 
       {valuesData.map((value, index) => (
-        <div
+        <Link
+          href={value.link}
           key={value.title}
           className={`flex flex-col ${
             index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
@@ -29,7 +31,7 @@ export default function Home() {
               className="w-full h-auto rounded-xl shadow-md"
             />
           </div>
-        </div>
+        </Link>
       ))}
     </section>
     </main>
