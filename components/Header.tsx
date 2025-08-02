@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         
         {/* Logo & Title */}
-        <div className="flex items-center space-x-3">
+        <Link href={'/'} className="flex items-center space-x-3">
           <img
             src="/logo.png"
             alt="NGO Logo"
@@ -22,13 +23,13 @@ const Header = () => {
             <h1 className="text-xl font-bold text-blue-800">ICC</h1>
             <p className="text-sm text-blue-700">International Childcare</p>
           </div>
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-6 items-center">
-          <a href="#about" className="text-slate-800 hover:text-black font-medium">About Us</a>
-          <a href="#contact" className="text-slate-800 hover:text-black font-medium">Contact</a>
-          <a href="#vision" className="text-slate-800 hover:text-black font-medium">Vision</a>
+          <a href="/about" className="text-slate-800 hover:text-black font-medium">About Us</a>
+          <a href="/contact" className="text-slate-800 hover:text-black font-medium">Contact</a>
+          <a href="/vision" className="text-slate-800 hover:text-black font-medium">Vision</a>
           <a
             href="#donate"
             className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition font-medium"
